@@ -24,13 +24,13 @@ const handleLoadCategory = async (category_id) => {
         
         <div class="card-body py-5 px-0 ">
               <h2 class="card-title p-0">
-                <div class="w-12 rounded-full">
-                    <img src="images/Ellipse 1.svg" />
+                <div class="">
+                    <img class="w-12 h-12  rounded-full" src=${videos?.authors[0]?.profile_picture} />
                   </div>
                 ${videos?.title}
               </h2>
           
-          <p class="px-8" >${videos?.authors[0]?.profile_name}  <span  class="badge"><img src="images/fi_10629607.svg" alt="" srcset=""></span></p>
+          <p class="px-8" >${videos?.authors[0]?.profile_name}  <span  class="badge"><img src=${videos?.authors[0]?.verified?"images/fi_10629607.svg":null } alt="" srcset=""></span></p>
           
           <div class="card-actions px-8">
            <p>${videos?.others?.views} views</p>
