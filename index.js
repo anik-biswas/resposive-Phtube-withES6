@@ -4,7 +4,8 @@ const handleCategory = async() => {
     const tabContainer = document.getElementById("tab-container");
     data.data.forEach((category) => {
         const div = document.createElement("div");
-        div.innerHTML = `<a onclick="handleLoadCategory('${category.category_id}')" class="tab btn ">${category.category}</a> `;
+        div.innerHTML = `<a onclick="handleLoadCategory('${category.category_id}')"  class=" tab btn  ">${category.category}</a> `;
+        
         tabContainer.appendChild(div);
     });
      
@@ -45,8 +46,11 @@ const handleLoadCategory = async (category_id) => {
           
             return { hours, minutes };
           };
+          const len = videos.others.posted_date.length;
+          
+          if(len!==0){
           const time = secToHours(videos.others.posted_date);
-
+          
         const div = document.createElement("div");
         div.innerHTML = `  <div class="card w-72 bg-base-100 shadow-xl">
         <div class="relative">
@@ -70,7 +74,32 @@ const handleLoadCategory = async (category_id) => {
     cardContainer.appendChild(div);
        
         }
-       
+        else{
+            const div = document.createElement("div");
+        div.innerHTML = `  <div class="card w-72 bg-base-100 shadow-xl">
+        <div class="relative">
+            <figure><img src=${videos?.thumbnail} class=" h-48 w-full bg-slate-400 rounded-xl  " alt="Shoes" /></figure>
+           
+        </div>
+        <div class="card-body py-5 px-0 ">
+              <h2 class="card-title p-0">
+                <div class="">
+                    <img class="w-12 h-12  rounded-full" src=${videos?.authors[0]?.profile_picture} />
+                  </div>
+                ${videos?.title}
+              </h2>
+              <p class="px-8" >${videos?.authors[0]?.profile_name}  <span  class="badge"><img src=${videos?.authors[0]?.verified?"images/fi_10629607.svg":"" } ></span></p>
+              <div class="card-actions px-8">
+           <p>${videos?.others?.views} views</p>
+          </div>
+        </div>
+      </div>`;
+      
+    cardContainer.appendChild(div);
+
+        }
+
+    }
     });
 };
 handleLoadCategory("1000");
