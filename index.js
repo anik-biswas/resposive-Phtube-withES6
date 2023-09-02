@@ -16,10 +16,26 @@ const handleLoadCategory = async (category_id) => {
     const data = await res.json();
 
     const cardContainer = document.getElementById("card-container");
-    cardContainer.innerHTML = '';
+    
+    const containerBody = document.getElementById("container-body");
+     cardContainer.innerHTML = '';
+     containerBody.innerHTML = '';
         const selectCategory = category_id;
         console.log(selectCategory)
-    data.data.forEach((videos ) => {
+        if (data.data.length===0)
+        {
+            const div = document.createElement("div");
+            div.classList.add("w-full","flex" , "flex-col", "item-center" , "justify-center");
+            div.innerHTML = `  
+            <img src="images/Icon.png"   class="mx-auto" alt="">
+            <p class=" text-center text-xl font-semibold" >Opps!! sorry, there is no</p>
+            <p class=" text-center text-xl font-semibold"> content here</p>
+            
+            `;
+            
+            containerBody.appendChild(div);
+        }
+        data.data.forEach((videos ) => {
        
         if( selectCategory === "1000" || videos.category_id===selectCategory) {
         
@@ -50,11 +66,11 @@ const handleLoadCategory = async (category_id) => {
           </div>
         </div>
       </div>`;
+      
     cardContainer.appendChild(div);
        
         }
        
-        
     });
 };
 handleLoadCategory("1000");
