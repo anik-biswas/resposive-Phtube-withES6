@@ -82,7 +82,7 @@ const  handleLoadCategory = async (category_id) => {
         div.innerHTML = `  <div class="card w-72 bg-base-100 shadow-xl">
         <div class="relative">
             <figure><img src=${videos?.thumbnail} class=" h-48 w-full bg-slate-400 rounded-xl  " alt="Shoes" /></figure>
-            <h3 class="absolute text-sm text-white bg-slate-600 bottom-5 right-5">${time.hours} hours ${time.minutes } minutes</h3>
+            <h3 class="absolute text-sm text-white bg-slate-600 bottom-5 right-5">${time.hours} hrs ${time.minutes } mins ago</h3>
         </div>
         <div class="card-body py-5 px-0 ">
               <h2 class="card-title p-0">
@@ -174,7 +174,7 @@ const displaySort = (sorts) => {
             div.innerHTML = `  <div class="card w-72 bg-base-100 shadow-xl">
             <div class="relative">
                 <figure><img src=${videos?.thumbnail} class=" h-48 w-full bg-slate-400 rounded-xl  " alt="Shoes" /></figure>
-                <h3 class="absolute text-sm text-white bg-slate-600 bottom-5 right-5">${time.hours} hours ${time.minutes } minutes</h3>
+                <h3 class="absolute text-sm text-white bg-slate-600 bottom-5 right-5">${time.hours} hrs ${time.minutes } mins ago</h3>
             </div>
             <div class="card-body py-5 px-0 ">
                   <h2 class="card-title p-0">
