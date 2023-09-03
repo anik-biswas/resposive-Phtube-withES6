@@ -52,6 +52,7 @@ const handleLoadCategory = async (category_id) => {
           const time = secToHours(videos.others.posted_date);
           
         const div = document.createElement("div");
+        div.classList.add("w-full" ,  "item-center" , "justify-center");
         div.innerHTML = `  <div class="card w-72 bg-base-100 shadow-xl">
         <div class="relative">
             <figure><img src=${videos?.thumbnail} class=" h-48 w-full bg-slate-400 rounded-xl  " alt="Shoes" /></figure>
