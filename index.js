@@ -5,8 +5,8 @@ const handleCategory = async() => {
     data.data.forEach((category) => {
         const div = document.createElement("div");
         
-        div.innerHTML = `<a onclick="handleLoadCategory('${category.category_id}')"  class=" tab btn  ">${category.category}</a> `;
-        const category_id=category.category_id;
+        div.innerHTML = `<button class="p-2 rounded-lg bg-gray-300  focus:bg-btn-color " ><a onclick="handleLoadCategory('${category?.category_id}')"  class=" tab font-bold ">${category.category}</a> </button>`;
+        //const category_id=category.category_id;
         tabContainer.appendChild(div);
         ;
     });
@@ -133,7 +133,7 @@ const  handleLoadCategory = async (category_id) => {
 handleLoadCategory("1000");
 
 const displaySort = (sorts) => {
-    console.log(sorts);
+
     const cardContainer = document.getElementById("card-container");
     const containerBody = document.getElementById("container-body");
     cardContainer.innerHTML = '';
@@ -155,7 +155,7 @@ const displaySort = (sorts) => {
     }
     else {
     sorts.forEach((videos ) => {
-        console.log(videos)
+    
        // if( selectCategory === "1000" || videos.category_id===selectCategory) {
         
             const  secToHours = (seconds)=> {
