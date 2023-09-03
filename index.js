@@ -8,7 +8,7 @@ const handleCategory = async() => {
         
         tabContainer.appendChild(div);
     });
-     
+
 } ;
 handleCategory();
 
@@ -22,7 +22,7 @@ const handleLoadCategory = async (category_id) => {
      cardContainer.innerHTML = '';
      containerBody.innerHTML = '';
         const selectCategory = category_id;
-        console.log(selectCategory)
+        
         if (data.data.length===0)
         {
             const div = document.createElement("div");
